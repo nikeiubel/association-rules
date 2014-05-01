@@ -34,7 +34,12 @@ python main.py file.csv 0.3 0.4
 
 e. A clear description of the internal design of your project; in particular, if you decided to implement variation(s) of the original a-priori algorithm (see above), you must explain precisely what variation(s) you have implemented and why.
 
+// Elaine
+
 f. The command line specification of an interesting sample run (i.e., a min_sup, min_conf combination that produces interesting results). Briefly explain why the results are interesting.
+
+// Elaine
 
 g. Any additional information that you consider significant.
 
+// Elaine

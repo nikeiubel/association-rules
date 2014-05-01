@@ -1,11 +1,11 @@
 import csv, sys
-#import json, sys, string, urllib, urllib2, re, collections
 from sys import stdout
 
 def main(filename, min_sup, min_conf):
     if min_sup < 0.0 or min_sup > 1.0 or min_conf < 0.0 or min_conf > 1.0:
         usage()
     else:
+        supportScores = {} # ********ELAINE********::: this is storing support values which you'll need to compute confidence scores
         with open(filename, 'rU') as f:
             rows = list(csv.reader(f))
             itemset = get_itemset(rows)
@@ -27,21 +27,20 @@ def get_itemset(rows):
     return set(itemlist)
 
 def a_priori(rows, itemset, min_sup):
-    supportScores = get_large_1_itemset(rows,itemset,min_sup)  # supportScores maps 1-itemsets into their support score
+    supportScores = get_large_1_itemset(rows,itemset,min_sup)  # supportScores maps tuples of 1-itemsets into their support score
     k = 2
-    lkminus1 = []              # initially k = 2 so this list will store L-1, i.e. the list of all large 1-itemsets
-    for key in supportScores:  # reads supportScores, which currently holds large 1-itemsets plus scores, to get a list of all large 1-itemsets
+    lkminus1 = []               # initially k = 2 so this list will store L-1, i.e. the list of all large 1-itemsets
+    for key in supportScores:   # reads supportScores, which currently holds large 1-itemsets plus scores, to get a list of all large 1-itemsets
         lkminus1.append(key)
-    print lkminus1
-    lk = []
+    lk = []                     # needs to declare it outside of loop so its value can be returned at the end
     while lkminus1:
         lk = []
         Ck = a_priori_gen(lkminus1)
         for itemlist in Ck:
             item_support = get_item_support(itemlist,rows)
             if item_support >= min_sup:
-                supportScores[itemlist] = item_support
-                lk.append(itemlist)
+                supportScores[tuple(itemlist)] = item_support
+                lk.append(tuple(itemlist))
         lkminus1 = lk
         k += 1
     return lk
@@ -53,11 +52,17 @@ def get_large_1_itemset(rows, itemset, min_sup):  # returns a map of large 1-ite
         itemlist.append(item)
         item_support = get_item_support(itemlist,rows)
         if item_support >= min_sup:
-            l1[itemlist] = item_support
+            print itemlist
+            print tuple(itemlist)
+            print item_support
+            print '\n'
+            l1[tuple(itemlist)] = item_support
     return l1
 
+# ELAINE: lkminus is a list of tuples, i.e. a list of itemsets. You need to join it with itself as explained in the paper/lecture 
+# so you can return an expanded list (for example: join (1,2,3,4) and (1,2,3,5) to get (1,2,3,4,5) - see p.4 of Agrawal paper)
 def a_priori_gen(lkminus1):
-    
+    return lkminus1
 
 def get_item_support(item,rows):
     count = 0

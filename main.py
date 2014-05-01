@@ -62,7 +62,7 @@ def get_large_1_itemset(rows, itemset, min_sup):  # returns a map of large 1-ite
 # ELAINE: lkminus is a list of tuples, i.e. a list of itemsets. You need to join it with itself as explained in the paper/lecture 
 # so you can return an expanded list (for example: join (1,2,3,4) and (1,2,3,5) to get (1,2,3,4,5) - see p.4 of Agrawal paper)
 def a_priori_gen(lkminus1):
-    return lkminus1
+    return lkminus1 #needs to be replaced with actual code for this function
 
 def get_item_support(item,rows):
     count = 0

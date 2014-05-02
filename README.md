@@ -23,8 +23,64 @@ Data set comes from '311 Service Requests from 2010 to Present' NYC Open Data da
 
 We made use of the 'filter' tool made available at the NYC Open Data interface. The following filter was applied: 'Created Date' 'is between' '12/25/2013 12:00:00 AM' and '12/25/2013 11:59:59 PM'. In other words, this data set contains all 311 service requests made on Christmas day last year.
 
-// Nikolas: Expand - explain which columns were deleted and why //
+We then opened the file on Excel and "cleaned up" the csv file by deleting some columns that we deemed likely to be irrelevant to the final results. These were columns that were mostly empty or with 'unspecified' values. We also deleted columns that contained time stamps or geographical locations. These are all very specific values which are highly unlikely to be seen frequently in the data set, which means we already knew they would be deleted by a-priori since their support value is very low. We reduced the complexity of the problem by removing these noisy values beforehand because we already knew they would be removed by a-priori anyway. 
 
+The columns deleted are: 
+- Created Date	
+- Closed Date
+- Landmark
+- Due Date	
+- Resolution Action 
+- Updated Date
+- X Coordinate (State Plane)	
+- Y Coordinate (State Plane)
+- Park Facility Name
+- School Name	
+- School Number	
+- School Region	
+- School Code
+- School Phone Number
+- School Address	
+- School City
+- School State
+- School Zip
+- School Not Found
+- School or Citywide Complaint	
+- Vehicle Type
+- Taxi Company Borough
+- Taxi Pick Up Location	
+- Bridge Highway Name
+- Bridge Highway Direction
+- Road Ramp	
+- Bridge Highway Segment	
+- Garage Lot Name	
+- Ferry Direction	
+- Ferry Terminal Name
+- Latitude
+- Longitude	
+- Location
+
+The columns that remained are:
+- Unique Key
+- Agency
+- Agency Name
+- Complaint Type
+- Descriptor
+- Location Type
+- Incident Zip	
+- Incident Address	
+- Street Name
+- Cross Street 1
+- Cross Street 2
+- Intersection Street 1	
+- Intersection Street 2	
+- Address Type
+- City	
+- Facility Type	
+- Status
+- Community Board
+- Borough	Park Borough
+ 
 (c) what makes your choice of INTEGRATED-DATASET file interesting (in other words, justify your choice of NYC Open Data data set(s)). 
 
 This dataset allows us to view all 311 service requests made in every borough of New York in a 24-hour time period. The 24-hour time period we have chosen coincides with a very demanding time of year for New York City. Holiday tourism and harsh winter weather both take a toll on the city's resources and infrastructure, making 311 calls very frequent during this period. Our dataset contains information on type of complaint, location of complaint, agency responsible, etc. The most interesting question this allows us to answer is: what types of problems are the most common in different areas of New York? Do certain boroughs have (or report) more problems than others? 

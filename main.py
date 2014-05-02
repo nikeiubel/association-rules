@@ -61,7 +61,8 @@ def a_priori(rows, itemset, min_sup):
         for itemlist in Ck:
             item_support = get_item_support(itemlist,rows)
             if item_support >= min_sup:
-                supportScores[tuple(itemlist)] = item_support
+                sorted_itemlist = sorted(itemlist)
+                supportScores[tuple(sorted_itemlist)] = item_support
                 lk.append(tuple(itemlist))
         lkminus1 = lk
         k += 1
@@ -115,9 +116,7 @@ def calc_confidence(lefthand,righthand):
         return 0
 
 def generate_rules(large_itemset, min_conf):
-    print freq_itemsets
     for itemset in freq_itemsets:
-        print itemset
         for item in combinations(itemset,1):
             righthand = item
             t = list(itemset)

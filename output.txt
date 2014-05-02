@@ -1,6 +1,0 @@
-==Frequent itemsets (min_sup=10%)
-[('ink', 'soap')], 50.0%
-
-==High-confidence association rules (min_conf=50%)
-[('soap',)] => [ink] (Conf: 100.0%, Supp: 50.0%)
-[('ink',)] => [soap] (Conf: 66.6666666667%, Supp: 50.0%)

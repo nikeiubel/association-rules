@@ -23,6 +23,8 @@ Data set comes from '311 Service Requests from 2010 to Present' NYC Open Data da
 
 We made use of the 'filter' tool made available at the NYC Open Data interface. The following filter was applied: 'Created Date' 'is between' '12/25/2013 12:00:00 AM' and '12/25/2013 11:59:59 PM'. In other words, this data set contains all 311 service requests made on Christmas day last year.
 
+// Nikolas: Expand - explain which columns were deleted and why //
+
 (c) what makes your choice of INTEGRATED-DATASET file interesting (in other words, justify your choice of NYC Open Data data set(s)). 
 
 This dataset allows us to view all 311 service requests made in every borough of New York in a 24-hour time period. The 24-hour time period we have chosen coincides with a very demanding time of year for New York City. Holiday tourism and harsh winter weather both take a toll on the city's resources and infrastructure, making 311 calls very frequent during this period. Our dataset contains information on type of complaint, location of complaint, agency responsible, etc. The most interesting question this allows us to answer is: what types of problems are the most common in different areas of New York? Do certain boroughs have (or report) more problems than others? 
@@ -61,4 +63,5 @@ $ python main.py INTEGRATED-DATASET.csv 0.1 0.8
 
 This combination produces interesting results because the low min_sup prevents too many items from being filtered out of the analysis, while the high min_conf picks out only the rules which are very strongly supported. This sample run produces some interesting insights about heating complaints in New York. They occur most frequently in The Bronx, followed by Brooklyn and then Manhattan. Heating complaints were also the most common complaints overall, and they occurred in residential buildings 100% of the time. This is interesting because it means that no non-residential buildings (e.g. commercial buildings) complained of heating-related problems on Christmas Day. 
 
+// Nikolas: Expand
 

@@ -79,13 +79,14 @@ The columns that remained are:
 - Facility Type	
 - Status
 - Community Board
-- Borough	Park Borough
+- Borough	
+- Park Borough
  
 (c) what makes your choice of INTEGRATED-DATASET file interesting (in other words, justify your choice of NYC Open Data data set(s)). 
 
-This dataset allows us to view all 311 service requests made in every borough of New York in a 24-hour time period. The 24-hour time period we have chosen coincides with a very demanding time of year for New York City. Holiday tourism and harsh winter weather both take a toll on the city's resources and infrastructure, making 311 calls very frequent during this period. Our dataset contains information on type of complaint, location of complaint, agency responsible, etc. The most interesting question this allows us to answer is: what types of problems are the most common in different areas of New York? Do certain boroughs have (or report) more problems than others? 
+This dataset allows us to view all 311 service requests made in every borough of New York in a 24-hour time period. The 24-hour time period we have chosen coincides with a very demanding time of year for New York City. Holiday tourism and harsh winter weather both take a toll on the city's resources and infrastructure, making 311 calls very frequent during this period. Our dataset contains information on type of complaint, location of complaint, agency responsible, etc. One interesting question this allows us to answer is: what types of problems are the most common in different areas of New York? Do certain boroughs have (or report) more problems than others? 
 
-We picked this data set in the hope that association rules would shed light on patterns of service requests in New York City, such as what boroughs see a given type of request more often. For instance, we found that heating complaints are more prevalent in the Bronx, which is incidentally a low-income borough.
+We picked this data set in the hope that association rules would shed light on patterns of service requests in New York City during a major holiday, such as what boroughs see a given type of request more often. For instance, we found that heating complaints are more prevalent in the Bronx, which is incidentally a low-income borough.
 
 d. A clear description of how to run your program (note that your project must compile/run under Linux in your CS account);
 

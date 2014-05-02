@@ -74,10 +74,6 @@ def get_large_1_itemset(rows, itemset, min_sup):  # returns a map of large 1-ite
         itemlist.append(item)
         item_support = get_item_support(itemlist,rows)
         if item_support >= min_sup:
-            print itemlist
-            print tuple(itemlist)
-            print item_support
-            print '\n'
             sorted_itemlist = sorted(itemlist)
             supportScores[tuple(sorted_itemlist)] = item_support
 

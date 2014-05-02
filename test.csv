@@ -1,1 +1,5 @@
-pen,ink,diary,soappen,ink,diary,pen,diary,,pen,ink,soap,
+tid,item1,item2,item3,item4
+1,pen,ink,diary,soap
+2,pen,ink,diary,
+3,pen,diary,,
+4,pen,ink,soap,

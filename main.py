@@ -77,14 +77,15 @@ def get_large_1_itemset(rows, itemset, min_sup):  # returns a map of large 1-ite
             print tuple(itemlist)
             print item_support
             print '\n'
-            supportScores[tuple(itemlist)] = item_support
+            sorted_itemlist = sorted(itemlist)
+            supportScores[tuple(sorted_itemlist)] = item_support
 
 def a_priori_gen(lkminus1):     #Generates candidate itemsets 
     Ck = []
     itemsets = set(lkminus1)
     for p, q in combinations(lkminus1, 2):  #Creates combinations of itemsets in L(k-1)
         k = len(p)
-        if p[:k-1] == q[:k-1] and p[k-1] < q[k-1]:  #If all items in the two itemsets are equal except for the last item
+        if p[:k-1] == q[:k-1]:  #If all items in the two itemsets are equal except for the last item
             c = p[:k-1] + tuple([p[k-1], q[k-1]])   #Creates new candidate itemset
             Ck.append(c)
     for c in Ck:                                    #For all new candidate itemsets
@@ -98,7 +99,7 @@ def a_priori_gen(lkminus1):     #Generates candidate itemsets
 
 def get_item_support(item,rows):
     count = 0
-    no_rows = len(rows)
+    no_rows = len(rows)-1
     for row in rows:
         if all(i in row for i in item):
             count += 1
@@ -114,7 +115,9 @@ def calc_confidence(lefthand,righthand):
         return 0
 
 def generate_rules(large_itemset, min_conf):
+    print freq_itemsets
     for itemset in freq_itemsets:
+        print itemset
         for item in combinations(itemset,1):
             righthand = item
             t = list(itemset)
